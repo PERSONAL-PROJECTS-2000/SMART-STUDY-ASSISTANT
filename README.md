@@ -119,9 +119,9 @@ STDAST/
 ├── SmartStudyAssistant.py  # Main application file
 ├── requirements.txt        # Python dependencies
 ├── packages.txt            # System dependencies
-├── .gitignore             # Git ignore rules
-├── README.md              # This file
-└── LICENSE                # License file
+├── .gitignore              # Git ignore rules
+├── README.md               # This file
+└── LICENSE                 # License file
 ```
 
 ## 🎨 Features in Detail
