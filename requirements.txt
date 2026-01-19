@@ -1,0 +1,12 @@
+google-genai
+streamlit
+PyPDF2
+python-pptx
+python-docx
+openpyxl
+Pillow
+pytesseract
+pdf2image
+pandas
+reportlab
+xlsxwriter
