@@ -3,6 +3,7 @@ from utils.APIs import call_gemini_with_retry
 
 def render():
     SL.markdown("### Chat with AI")
+    SL.write("Tell the AI your doubts to resolve them.")
     for message in SL.session_state.chat_history:
         with SL.chat_message(message["role"]):
             SL.write(message["content"])
@@ -14,4 +15,5 @@ def render():
         with SL.chat_message("assistant"):
             response = call_gemini_with_retry(user_input)
             SL.write(response)
+
             SL.session_state.chat_history.append({"role": "assistant", "content": response})
