@@ -54,20 +54,20 @@ SL.title("AI Study Assistant")
 tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9 = SL.tabs(["💬 Chat","📝 Summarize","📚 Explain","🔑 Key Words","🔍 Similar Content","🌐 Web Links","❓ Q&A","🖼️ Image Search","📅 Timetable"])
 
 with tab1:
-    Chat.render()
+    render()
 with tab2:
-    Summ.render_summarize()
+    render_summarize()
 with tab3:
-    Exp.render_explain()
+    render_explain()
 with tab4:
-    KeyW.render_keywords()
+    render_keywords()
 with tab5:
-    Sim.render_similar()
+    render_similar()
 with tab6:
-    Links.render_links()
+    render_links()
 with tab7:
-    QA.render_qa()
+    render_qa()
 with tab8:
-    Img.render_image_search()
+    render_image_search()
 with tab9:
-    TimTab.rendert()
+    rendert()
