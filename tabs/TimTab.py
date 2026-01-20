@@ -4,7 +4,7 @@ import pandas as pd
 import io
 from utils.APIs import call_gemini_with_retry
 
-def render():
+def rendert():
     SL.markdown("### Create Your Timetable")
     with SL.form("task_form"):
         col1, col2, col3, col4 = SL.columns(4)
