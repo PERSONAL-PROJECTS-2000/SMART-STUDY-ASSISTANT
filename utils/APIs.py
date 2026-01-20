@@ -1,4 +1,4 @@
-import google.genai as genai
+import google.generativeai as genai
 import streamlit as SL
 class APIKeyManager:
     @staticmethod
@@ -42,5 +42,6 @@ def call_gemini_with_retry(prompt, max_retries=None):
                 return f"Error: {str(e)}"
 
     return "All API keys exhausted. Please add more keys or try later."
+
 
 
