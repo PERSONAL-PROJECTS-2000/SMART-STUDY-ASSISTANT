@@ -1,13 +1,16 @@
 import streamlit as SL
 from utils.Theme import apply_theme
-from tabs import Chat, Summ, Exp, KeyW, Sim, Links, QA, Img, TimTab
+from tabs.Chat import render
+from tabs.Summ import render_summarize
+from tabs.Exp import render_explain
+from tabs.KeyW import render_keywords
+from tabs.Sim import render_similar
+from tabs.Links import render_links
+from tabs.Img import render_image_search
+from tabs.QA import render_qa
+from tabs.TimTab import rendert
 
-SL.set_page_config(
-    page_title="AI-powered Smart Study Assistant",
-    page_icon="🎓",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+SL.set_page_config(page_title="AI-powered Smart Study Assistant",page_icon="🎓",layout="wide",initial_sidebar_state="expanded")
 
 if 'api_keys' not in SL.session_state:
     SL.session_state.api_keys = []
@@ -67,4 +70,4 @@ with tab7:
 with tab8:
     Img.render_image_search()
 with tab9:
-    TimTab.render()
+    TimTab.rendert()
