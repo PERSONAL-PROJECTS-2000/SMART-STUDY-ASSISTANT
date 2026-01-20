@@ -1,5 +1,5 @@
 import streamlit as SL
-from utils.Theme import apply_theme
+from utils.Theme import apply_theme as apth
 from tabs.Chat import render as cren
 from tabs.Summ import render_summarize as smren
 from tabs.Exp import render_explain as exren
@@ -25,7 +25,7 @@ if 'chat_history' not in SL.session_state:
 if 'client' not in SL.session_state:
     SL.session_state.client = None
 
-apply_theme()
+apth()
 
 with SL.sidebar:
     SL.markdown("### 🔑 API Configuration")
@@ -71,3 +71,4 @@ with tab8:
     iren()
 with tab9:
     tren()
+
