@@ -1,14 +1,14 @@
 import streamlit as SL
 from utils.Theme import apply_theme
-from tabs.Chat import render
-from tabs.Summ import render_summarize
-from tabs.Exp import render_explain
-from tabs.KeyW import render_keywords
-from tabs.Sim import render_similar
-from tabs.Links import render_links
-from tabs.Img import render_image_search
-from tabs.QA import render_qa
-from tabs.TimTab import rendert
+from tabs.Chat import render as cren
+from tabs.Summ import render_summarize as smren
+from tabs.Exp import render_explain as exren
+from tabs.KeyW import render_keywords as kwren
+from tabs.Sim import render_similar as sren
+from tabs.Links import render_links as lren
+from tabs.Img import render_image_search as iren
+from tabs.QA import render_qa as qaren
+from tabs.TimTab import rendert as tren
 
 SL.set_page_config(page_title="AI-powered Smart Study Assistant",page_icon="🎓",layout="wide",initial_sidebar_state="expanded")
 
@@ -54,20 +54,20 @@ SL.title("AI Study Assistant")
 tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9 = SL.tabs(["💬 Chat","📝 Summarize","📚 Explain","🔑 Key Words","🔍 Similar Content","🌐 Web Links","❓ Q&A","🖼️ Image Search","📅 Timetable"])
 
 with tab1:
-    render()
+    cren()
 with tab2:
-    render_summarize()
+    smren()
 with tab3:
-    render_explain()
+    exren()
 with tab4:
-    render_keywords()
+    kwren()
 with tab5:
-    render_similar()
+    sren()
 with tab6:
-    render_links()
+    lren()
 with tab7:
-    render_qa()
+    qaren()
 with tab8:
-    render_image_search()
+    iren()
 with tab9:
-    rendert()
+    tren()
