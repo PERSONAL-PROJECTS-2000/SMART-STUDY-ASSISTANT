@@ -16,9 +16,10 @@ def configure_gemini():
     key = APIKeyManager.get_current_key()
     if key:
         try:
-            client = genai.Client(api_key=key)
-            SL.session_state.client = client
-            return client
+            genai.configure(api_key=key)
+            model = genai.GenerativeModel('gemini-1.5-flash')  # Use a valid model like 'gemini-1.5-flash'
+            SL.session_state.client = model
+            return model
         except Exception as e:
             return None
     return None
@@ -30,10 +31,7 @@ def call_gemini_with_retry(prompt, max_retries=None):
             client = configure_gemini()
             if not client:
                 return "Please configure at least one API key in the sidebar."
-            response = client.models.generate_content(
-                model='gemini-2.0-flash-exp',
-                contents=prompt
-            )
+            response = client.generate_content(prompt)
             return response.text
         except Exception as e:
             error_str = str(e).lower()
@@ -44,3 +42,4 @@ def call_gemini_with_retry(prompt, max_retries=None):
                 return f"Error: {str(e)}"
 
     return "All API keys exhausted. Please add more keys or try later."
+
