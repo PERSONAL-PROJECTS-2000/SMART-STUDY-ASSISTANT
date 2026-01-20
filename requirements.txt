@@ -1,4 +1,4 @@
-google-genai
+google-generativeai
 streamlit
 PyPDF2
 python-pptx
