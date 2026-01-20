@@ -10,7 +10,7 @@ from tabs.Img import render_image_search as iren
 from tabs.QA import render_qa as qaren
 from tabs.TimTab import rendert as tren
 
-SL.set_page_config(page_title="AI-powered Smart Study Assistant",page_icon="🎓",layout="wide",initial_sidebar_state="expanded")
+SL.set_page_config(page_title="AI-powered Smart Study Assistant", page_icon="🎓", layout="wide", initial_sidebar_state="expanded")
 
 if 'api_keys' not in SL.session_state:
     SL.session_state.api_keys = []
@@ -71,4 +71,5 @@ with tab8:
     iren()
 with tab9:
     tren()
+
 
