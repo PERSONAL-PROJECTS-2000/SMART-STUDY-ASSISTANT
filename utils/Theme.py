@@ -1,5 +1,5 @@
 import streamlit as SL
-def apply_theme():
+def apth():
     if SL.session_state.theme == 'day':
         SL.markdown("""
         <style>
@@ -25,4 +25,5 @@ def apply_theme():
             color: #e0e0e0;
         }
         </style>
+
         """, unsafe_allow_html=True)
