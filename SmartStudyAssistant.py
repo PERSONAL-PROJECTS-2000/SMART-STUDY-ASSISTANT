@@ -50,7 +50,7 @@ with SL.sidebar:
             SL.session_state.theme = 'night'
             SL.rerun()
 
-SL.title("AI Study Assistant")
+SL.title("🎓 AI-powered Smart Study Assistant")
 tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9 = SL.tabs(["💬 Chat","📝 Summarize","📚 Explain","🔑 Key Words","🔍 Similar Content","🌐 Web Links","❓ Q&A","🖼️ Image Search","📅 Timetable"])
 
 with tab1:
@@ -71,5 +71,6 @@ with tab8:
     iren()
 with tab9:
     tren()
+
 
 
