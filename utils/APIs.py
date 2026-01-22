@@ -17,7 +17,7 @@ def configure_gemini():
     if key:
         try:
             genai.configure(api_key=key)
-            model = genai.GenerativeModel('gemini-1.5-flash')
+            model = genai.GenerativeModel('gemini-3-flash')
             SL.session_state.client = model
             return model
         except Exception as e:
