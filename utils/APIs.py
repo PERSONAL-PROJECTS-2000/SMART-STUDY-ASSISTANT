@@ -67,7 +67,7 @@ def configure_gemini():
     try:
         genai.configure(api_key=key)
         # Re-initialize the model to ensure it uses the newly configured key
-        model = genai.GenerativeModel('gemini-2.0-flash') 
+        model = genai.GenerativeModel('gemini-2.5-flash-lite') 
         SL.session_state.client = model
         return model
     except Exception:
@@ -106,4 +106,5 @@ def call_gemini_with_retry(prompt, max_retries=None):
         return f"All API keys exhausted (Quota reached). Last error: {last_error}"
     else:
         return f"Error after trying available keys: {last_error}"
+
 
