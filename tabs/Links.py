@@ -4,6 +4,7 @@ from utils.DOCs import extract_text_from_file
 
 def render_links():
     SL.markdown("### Find Related Web Resources")
+    SL.write("Get links to relevant and useful sources of information.")
     col1, col2 = SL.columns([2, 1])
     with col1:
         link_file = SL.file_uploader("Upload Document", type=['txt', 'pdf', 'docx', 'doc', 'pptx', 'jpg', 'jpeg', 'png', 'xlsx'], key="link_file")
@@ -19,4 +20,5 @@ def render_links():
                 result = call_gemini_with_retry(prompt)
                 SL.text_area("Web Links", result, height=400, key="link_output")
         else:
+
             SL.warning("Please upload a document first!")
