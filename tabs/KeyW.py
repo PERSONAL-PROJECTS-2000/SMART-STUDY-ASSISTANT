@@ -4,6 +4,7 @@ from utils.DOCs import extract_text_from_file
 
 def render_keywords():
     SL.markdown("### Find and Explain Key Words")
+    SL.write("Pick out the important words in a document.")
     col1, col2 = SL.columns([2, 1])
     with col1:
         kw_file = SL.file_uploader("Upload Document", type=['txt', 'pdf', 'docx', 'doc', 'pptx', 'jpg', 'jpeg', 'png', 'xlsx'], key="kw_file")
@@ -20,4 +21,5 @@ def render_keywords():
                 result = call_gemini_with_retry(prompt)
                 SL.text_area("Keywords & Explanations", result, height=400, key="kw_output")
         else:
+
             SL.warning("Please upload a document first!")
