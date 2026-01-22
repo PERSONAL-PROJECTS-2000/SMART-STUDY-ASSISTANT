@@ -4,6 +4,7 @@ from utils.DOCs import extract_text_from_file
 
 def render_explain():
     SL.markdown("### Explain Document Content")
+    SL.write("Understand a concept at different levels of complexity.")
     col1, col2 = SL.columns([2, 1])
     with col1:
         exp_file = SL.file_uploader("Upload Document", type=['txt', 'pdf', 'docx', 'doc', 'pptx', 'jpg', 'jpeg', 'png', 'xlsx'], key="exp_file")
@@ -25,4 +26,5 @@ def render_explain():
                         result = call_gemini_with_retry(prompt)
                         SL.text_area("Explanation", result, height=400, key=key)
                 else:
+
                     SL.warning("Please upload a document first!")
