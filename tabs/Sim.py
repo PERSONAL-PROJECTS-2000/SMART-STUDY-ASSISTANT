@@ -5,6 +5,7 @@ from utils.DOCs import extract_text_from_file
 
 def render_similar():
     SL.markdown("### Find Similar Documents/Images")
+    SL.write("Use the AI as an automatic web search tool to find a similar document/image.")
     col1, col2 = SL.columns([2, 1])
     with col1:
         sim_file = SL.file_uploader("Upload Document", type=['txt', 'pdf', 'docx', 'doc', 'pptx', 'jpg', 'jpeg', 'png', 'xlsx'], key="sim_file")
@@ -23,4 +24,5 @@ def render_similar():
                 result = call_gemini_with_retry(prompt)
                 SL.text_area("Similar Content", result, height=400, key="sim_output")
         else:
+
             SL.warning("Please upload a document first!")
