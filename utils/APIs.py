@@ -1,5 +1,6 @@
 import google.generativeai as genai
 import streamlit as SL
+
 class APIKeyManager:
     @staticmethod
     def get_current_key():
@@ -12,6 +13,7 @@ class APIKeyManager:
             SL.session_state.current_key_index = (SL.session_state.current_key_index + 1) % len(SL.session_state.api_keys)
             return True
         return False
+
 def configure_gemini():
     key = APIKeyManager.get_current_key()
     if not key:
@@ -47,3 +49,4 @@ def call_gemini_with_retry(prompt, max_retries=None):
         return f"All API keys exhausted (Quota reached). Last error: {last_error}"
     else:
         return f"Error after trying available keys: {last_error}"
+
