@@ -4,6 +4,7 @@ from utils.DOCs import extract_text_from_file
 
 def render_summarize():
     SL.markdown("### Summarize Your Document")
+    SL.write("Get a summary of your document.")
     col1, col2 = SL.columns([2, 1])
     with col1:
         sum_file = SL.file_uploader("Upload Document", type=['txt', 'pdf', 'docx', 'doc', 'pptx', 'jpg', 'jpeg', 'png', 'xlsx'], key="sum_file")
@@ -20,4 +21,5 @@ def render_summarize():
                 result = call_gemini_with_retry(prompt)
                 SL.text_area("Summary", result, height=400, key="sum_output")
         else:
+
             SL.warning("Please upload a document first!")
