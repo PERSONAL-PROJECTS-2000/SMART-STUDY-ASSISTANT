@@ -6,6 +6,7 @@ from utils.APIs import call_gemini_with_retry
 
 def rendert():
     SL.markdown("### Create Your Timetable")
+    SL.write("Use the AI to generate a timetable that best suits your requirements.")
     with SL.form("task_form"):
         col1, col2, col3, col4 = SL.columns(4)
         with col1:
