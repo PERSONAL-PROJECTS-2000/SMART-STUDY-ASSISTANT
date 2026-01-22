@@ -4,6 +4,7 @@ from utils.DOCs import extract_text_from_file
 
 def render_image_search():
     SL.markdown("### Find Relevant Images")
+    SL.write("Find the image that best fits your description.")
     col1, col2 = SL.columns([2, 1])
     with col1:
         img_file = SL.file_uploader("Upload Document", type=['txt', 'pdf', 'docx', 'doc', 'pptx', 'jpg', 'jpeg', 'png', 'xlsx'], key="img_file")
@@ -20,4 +21,5 @@ def render_image_search():
                 result = call_gemini_with_retry(prompt)
                 SL.text_area("Image Results", result, height=400, key="img_output")
         else:
+
             SL.warning("Please upload a document first!")
