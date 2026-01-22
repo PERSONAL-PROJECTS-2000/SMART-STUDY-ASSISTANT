@@ -4,6 +4,7 @@ from utils.DOCs import extract_text_from_file
 
 def render_qa():
     SL.markdown("### Generate Answers to Questions")
+    SL.write("Get instant answers to your written questions.")
     col1, col2 = SL.columns([2, 1])
     with col1:
         qa_file = SL.file_uploader("Upload Document", type=['txt', 'pdf', 'docx', 'doc', 'pptx', 'jpg', 'jpeg', 'png', 'xlsx'], key="qa_file")
@@ -20,4 +21,5 @@ def render_qa():
                 result = call_gemini_with_retry(prompt)
                 SL.text_area("Questions & Answers", result, height=400, key="qa_output")
         else:
+
             SL.warning("Please upload a document first!")
