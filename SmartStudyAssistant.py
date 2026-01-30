@@ -9,6 +9,7 @@ from tabs.Links import render_links as lren
 from tabs.Img import render_image_search as iren
 from tabs.QA import render_qa as qaren
 from tabs.TimTab import rendert as tren
+from tabs.HowToUse import usage as use
 
 SL.set_page_config(page_title="AI-powered Smart Study Assistant", page_icon="🎓", layout="wide", initial_sidebar_state="expanded")
 
@@ -25,8 +26,6 @@ if 'chat_history' not in SL.session_state:
 if 'client' not in SL.session_state:
     SL.session_state.client = None
 
-#apth()
-
 with SL.sidebar:
     SL.markdown("### 🔑 API Configuration")
     api_key_inputs = []
@@ -38,20 +37,9 @@ with SL.sidebar:
         SL.session_state.api_keys = [k.strip() for k in api_key_inputs if k.strip()]
         SL.session_state.current_key_index = 0
         SL.success(f"Loaded {len(SL.session_state.api_keys)} API key(s)")
-    #SL.markdown("---")
-    #SL.markdown("### 🎨 Theme")
-    #col1, col2 = SL.columns(2)
-    #with col1:
-        #if SL.button("☀️ Day"):
-            #SL.session_state.theme = 'day'
-            #SL.rerun()
-    #with col2:
-        #if SL.button("🌙 Night"):
-            #SL.session_state.theme = 'night'
-            #SL.rerun()
 
 SL.title("🎓 AI-powered Smart Study Assistant")
-tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9 = SL.tabs(["💬 Chat","📝 Summarize","📚 Explain","🔑 Key Words","🔍 Similar Content","🌐 Web Links","❓ Q&A","🖼️ Image Search","📅 Timetable"])
+tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10  = SL.tabs(["💬 Chat","📝 Summarize","📚 Explain","🔑 Key Words","🔍 Similar Content","🌐 Web Links","❓ Q&A","🖼️ Image Search","📅 Timetable","ℹ️ How To Use"])
 
 with tab1:
     cren()
@@ -71,3 +59,6 @@ with tab8:
     iren()
 with tab9:
     tren()
+with tab10:
+    use()
+
